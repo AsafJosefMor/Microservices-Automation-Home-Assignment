@@ -1,0 +1,12 @@
+// tsconfig.build.json
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    // Only need Node and dotenv types for service builds
+    "types": ["node", "dotenv"],
+  },
+  "include": [
+    "src/**/*",      // service code
+    "common/**/*"    // shared common code
+  ]
+}

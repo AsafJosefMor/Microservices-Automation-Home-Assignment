@@ -1,0 +1,12 @@
+// tsconfig.test.json
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["node","jest","supertest","dotenv"]
+  },
+  "include": [
+    "services/**/*",
+    "services/common/**/*",
+    "tests/**/*"
+  ]
+}
