@@ -8,13 +8,7 @@ module.exports = {
       tsconfig: 'tsconfig.test.json'
     }],
   },
-  reporters: [
-    'default',
-    [ 'jest-junit', {
-      outputDirectory: './reports/junit',
-      outputName: 'results.xml'
-    }]
-  ],
+  reporters: ['default'],
   coverageDirectory: 'reports/coverage',
   collectCoverage: true
 };

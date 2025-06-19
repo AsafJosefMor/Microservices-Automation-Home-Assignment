@@ -112,7 +112,8 @@ describe('Gateway E2E', () => {
     // Verify the order is stamped with the correct userId
     // We test user ID=1 because the login user is the static Admin user we've created
     // (In a real scenario it should be userId: expect(resCreate.body.userId).toBe(userId))
-    const userId = resCreate.body.user_id;
+    const userId = resCreate.body.userId;
+
     expect(userId).toBe(1);
 
     // Fetch all orders via GET /orders/user and ensure our order is in the list

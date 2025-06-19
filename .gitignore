@@ -1,5 +1,15 @@
+# Default ignored files
+.idea
+.idea/*
+*.iml
+/shelf/
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
 node_modules/
 **/node_modules/
-
 package-lock.json
 **/package-lock.json

@@ -50,7 +50,7 @@ describe('Redis Pub/Sub Integration', () => {
           expect.objectContaining({
             item:      orderPayload.item,
             quantity:  orderPayload.quantity,
-            user_id:    expect.any(Number),
+            userId:    expect.any(Number),
             id:        expect.any(Number)
           })
         ])
