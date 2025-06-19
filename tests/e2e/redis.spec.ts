@@ -5,10 +5,18 @@ import { createClient } from 'redis';
 import { testConfig } from '../utils/config';
 import { GatewayEndpoints } from '../../services/common/endpoints';
 
+/**
+ * End-to-end test for Orders Redis Pub/Sub integration.
+ */
 describe('Redis Pub/Sub Integration', () => {
   let token: string;
   let redisUrl: string;
 
+  /**
+   * beforeAll: run once before any test.
+   * - Logs in via the Gateway to obtain a valid JWT.
+   * - Reads the Redis connection URL from testConfig.
+   */
   beforeAll(async () => {
 
     // Get a valid JWT
@@ -21,6 +29,13 @@ describe('Redis Pub/Sub Integration', () => {
     redisUrl =testConfig.redisUrl;
   });
 
+  /**
+   * Test: publishing of an `order:created` event.
+   * -- Connects a Redis subscriber,
+   * -- Triggers an order via the Gateway,
+   * -- Waits briefly for Pub/Sub delivery,
+   * -- Asserts that the expected message arrived.
+   */
   it('should publish an order:created event to Redis when creating an order', async () => {
     // Connect subscriber
     const sub = createClient({ url: redisUrl });
