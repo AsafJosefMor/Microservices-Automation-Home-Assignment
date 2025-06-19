@@ -12,13 +12,6 @@ Tests (using Jest):
 
 ---
 
-## Prerequisites
-- Docker (v20+)
-- Docker Compose (v2+)
-- Node.js & npm (optional)
-- 
----
-
 ## Configuration & Environment Variables
 Create `.env`:
 ```
@@ -70,7 +63,7 @@ docker compose -f docker-compose.yml -f docker-compose.test.yml up --build --abo
 - GET /users/:userId
 - POST /orders
 - GET /orders/user
-- 
+
 ---
 
 ## Architecture & Folder Layout
